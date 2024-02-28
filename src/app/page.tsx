@@ -3,31 +3,27 @@ import React, { useState, useEffect } from "react";
 import styles from "./page.module.css";
 
 export default function Home() {
-  const [showWelcome, setShowWelcome] = useState(false);
+  const [showNewDiv, setShowNewDiv] = useState(false);
 
   useEffect(() => {
-    const showTimeout = setTimeout(() => {
-      setShowWelcome(true);
-    }, 1000);
-
-    const hideTimeout = setTimeout(() => {
-      setShowWelcome(false);
+    // Set showNewDiv to true after the blinking animation (4 seconds)
+    const timeoutId = setTimeout(() => {
+      setShowNewDiv(true);
     }, 4000);
-    return () => {
-      clearTimeout(showTimeout);
-      clearTimeout(hideTimeout);
-    };
+
+    return () => clearTimeout(timeoutId);
   }, []);
 
   return (
     <main className={styles.main}>
-      <h1
-        className={`${styles.welcome} ${
-          showWelcome ? styles["show-welcome"] : ""
-        }`}
-      >
-        Welcome
-      </h1>
+      <div className={styles.welcomeDiv}>
+        <h1 className={styles.header}>Welcome</h1>
+      </div>
+      {showNewDiv && (
+        <div className={styles.newDiv}>
+          <div className={styles.name}></div>
+        </div>
+      )}
     </main>
   );
 }

@@ -1,41 +1,53 @@
 .main {
   background-color: black;
-  height: 100vh;
   width: 100%;
+  height: 100vh;
+}
+.welcomeDiv {
+  width: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
   text-align: center;
+  align-items: center;
+  animation: slideIn 3s ease-in-out;
 }
-
-.welcome {
+.newDiv {
+  background-color: red;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  animation: slideDown 3s ease-in-out;
+}
+.header {
   color: white;
-  font-size: 8rem;
+  font-size: 7rem;
   font-family: "Times New Roman", Times, serif;
-  position: relative;
-  left: -200%; /* Start off-screen on the left */
-  transition: left 2s ease-in-out, font-size 1s ease-in-out; /* Smooth transition for left property */
+}
+.name {
+  background-color: black;
+  height: 20rem;
+  width: 98%;
+  margin: 1rem;
+  animation: slideIn 6s ease-in-out;
 }
 
-.show-welcome {
-  left: 0; /* Move to the center of the screen */
-}
-@media screen and (max-width: 600px) {
-  .welcome {
-    font-size: 5rem; /* Adjust font size for smaller screens */
+@keyframes slideIn {
+  from {
+    transform: translate(-200%);
   }
-
-  .show-welcome {
-    font-size: 3rem; /* Adjust font size for smaller screens when in the center position */
+  to {
+    transform: translate(0%);
   }
 }
-
-@media screen and (max-width: 400px) {
-  .welcome {
-    font-size: 3rem; /* Adjust font size for even smaller screens */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100vh);
   }
-
-  .show-welcome {
-    font-size: 2rem; /* Adjust font size for even smaller screens when in the center position */
+  to {
+    transform: translateY(0);
   }
 }
