@@ -20,10 +20,21 @@ export default function Home() {
         <h1 className={styles.header}>Welcome</h1>
       </div>
       {showNewDiv && (
+        <div className={styles.nameDiv}>
+          <h1 className={styles.askingName}>Please enter your name</h1>
+          <form action="">
+            <input type="text" className={styles.input} />
+          </form>
+          <button className={styles.button} type="submit">
+            Submit
+          </button>
+        </div>
+      )}
+      {/* {showNewDiv && (
         <div className={styles.newDiv}>
           <div className={styles.name}></div>
         </div>
-      )}
+      )} */}
     </main>
   );
 }

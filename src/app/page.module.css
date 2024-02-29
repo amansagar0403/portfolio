@@ -3,7 +3,10 @@
   width: 100%;
   height: 100vh;
 }
-.welcomeDiv {
+
+.welcomeDiv,
+.newDiv,
+.nameDiv {
   width: 100%;
   height: 100vh;
   display: flex;
@@ -12,27 +15,101 @@
   align-items: center;
   animation: slideIn 3s ease-in-out;
 }
-.newDiv {
-  background-color: red;
-  width: 100%;
-  height: 100vh;
+
+.newDiv,
+.nameDiv {
+  background-color: black;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1;
   animation: slideDown 3s ease-in-out;
 }
+
+.nameDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: slideleft 3s ease-in-out;
+}
+
 .header {
   color: white;
   font-size: 7rem;
   font-family: "Times New Roman", Times, serif;
 }
+
 .name {
   background-color: black;
   height: 20rem;
-  width: 98%;
+  width: 100%;
   margin: 1rem;
   animation: slideIn 6s ease-in-out;
+}
+
+.input {
+  background-color: black;
+  border: 2px solid white;
+  height: 2rem;
+  width: 20rem;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  padding-left: 10px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.askingName {
+  color: white;
+  font-size: 4rem;
+  font-family: "Times New Roman", Times, serif;
+  margin-bottom: 1rem;
+}
+.button {
+  background-color: black;
+  border: 2px solid white;
+  height: 2rem;
+  width: 7rem;
+  color: white;
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .header {
+    font-size: 4rem;
+  }
+
+  .name {
+    height: 15rem;
+    width: 98%;
+  }
+
+  .input {
+    width: 15rem;
+  }
+
+  .askingName {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    font-size: 3rem;
+  }
+
+  .name {
+    height: 12rem;
+    width: 98%;
+  }
+
+  .input {
+    width: 12rem;
+  }
+
+  .askingName {
+    font-size: 2rem;
+  }
 }
 
 @keyframes slideIn {
@@ -49,5 +126,13 @@
   }
   to {
     transform: translateY(0);
+  }
+}
+@keyframes slideleft {
+  from {
+    transform: translateX(100vw);
+  }
+  to {
+    transform: translateX(0);
   }
 }
