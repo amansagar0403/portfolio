@@ -16,23 +16,10 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <div className={styles.welcomeDiv}>
-        <h1 className={styles.header}>Welcome</h1>
-      </div>
-      {showNewDiv && (
-        <div className={styles.nameDiv}>
-          <h1 className={styles.askingName}>Please enter your name</h1>
-          <form action="">
-            <input type="text" className={styles.input} />
-          </form>
-          <button className={styles.button} type="submit">
-            Submit
-          </button>
-        </div>
-      )}
+      <h1 className={styles.welcome}>Welcome</h1>
       {/* {showNewDiv && (
         <div className={styles.newDiv}>
-          <div className={styles.name}></div>
+          <div className={styles.home}></div>
         </div>
       )} */}
     </main>
