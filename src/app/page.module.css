@@ -1,76 +1,111 @@
 .main {
-  background-color: black;
-  width: 100%;
-  height: 100vh;
-  width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: center;
-  text-align: center;
   align-items: center;
+  flex-direction: column;
 }
-.newDiv {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  background-color: black;
-  position: fixed;
-  top: 0;
-  left: 0;
+
+.upperdiv {
+  background-color: transparent;
+  height: 80vh;
+  width: 70%;
   z-index: 1;
-  animation: slideDown 3s ease-in-out;
+  position: absolute;
+  display: flex;
 }
-.welcome {
+
+.credentials {
+  height: 100%;
+  width: 50%;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.moon {
+  height: 100%;
+  width: 50%;
+  background-color: transparent;
+}
+.credential {
+  height: 5rem;
   color: white;
+  font-size: 70px;
   font-family: "Times New Roman", Times, serif;
-  animation: bigger 1s ease-in-out;
-  font-size: 4rem;
+  margin-bottom: 30px;
+  background-color: transparent;
+  border: none;
 }
-.home {
-  background-color: black;
-  height: 20rem;
-  width: 100%;
-  margin: 1rem;
-  animation: slideIn 6s ease-in-out;
+.credential:hover {
+  color: red;
+  cursor: pointer;
 }
-@media screen and (max-width: 768px) {
-  .welcome {
-    font-size: 4rem;
-  }
+.rocketDiv {
+  height: 10vh;
+  width: 50px;
 }
-
-@media screen and (max-width: 480px) {
-  .welcome {
-    font-size: 4rem;
-  }
+.rocket {
+  height: 10vh;
+  animation: fly 60s ease-in-out;
 }
-
-@keyframes bigger {
+@keyframes fly {
   0% {
-    font-size: 2rem;
-    opacity: 0;
   }
-  100% {
-    font-size: 4rem;
-    opacity: 1;
+  5% {
+    transform: translateX(-5rem) translateY(-10rem);
+    rotate: -30deg;
+  }
+  10% {
+    transform: translateX(10rem) translateY(-15rem);
+    rotate: -60deg;
+  }
+  15% {
+    transform: translateX(-20rem) translateY(-15rem);
+    rotate: 80deg;
+  }
+  20% {
+    transform: translateX(20rem) translateY(-22rem);
+    rotate: -100deg;
+  }
+  25% {
+    transform: translateX(20rem) translateY(-22rem);
+    rotate: -30deg;
   }
 }
-@keyframes slideIn {
-  from {
-    transform: translate(-200%);
+@media (max-width: 768px) {
+  .upperdiv {
+    flex-direction: column;
+    height: 80%;
   }
-  to {
-    transform: translate(0%);
+
+  .credentials {
+    width: 100%;
+    align-items: center;
+  }
+  .credential {
+    font-size: 3rem;
+  }
+  .moon {
+    display: none;
   }
 }
-@keyframes slideDown {
-  from {
-    transform: translateY(-100vh);
+@media (max-width: 1080px) {
+  .upperdiv {
+    flex-direction: column;
+    height: 80%;
   }
-  to {
-    transform: translateY(0);
+
+  .credentials {
+    width: 100%;
+    align-items: center;
+  }
+  .credential {
+    font-size: 5rem;
+    line-height: 10rem;
+  }
+  .moon {
+    display: none;
   }
 }
