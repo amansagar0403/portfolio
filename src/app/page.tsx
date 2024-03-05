@@ -3,12 +3,14 @@ import React, { useState } from "react";
 import styles from "./page.module.css";
 import Space from "./components/Space";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Overlay from "./components/Overlay";
+import Overlay from "./components/Profile";
 
 export default function Home() {
   const [overlayVisible, setOverlayVisible] = useState(false);
+  const [overlayHeader, setOverlayHeader] = useState("");
 
-  const toggleOverlay = () => {
+  const toggleOverlay = (header: string) => {
+    setOverlayHeader(header);
     setOverlayVisible(!overlayVisible);
   };
 
@@ -17,19 +19,35 @@ export default function Home() {
   };
 
   return (
-    <main className={`container-fluid ${styles.main}`}>
+    <main
+      className={`container-fluid ${styles.main} ${
+        overlayVisible ? styles.blurBackground : ""
+      }`}
+    >
       <div className={`row ${styles.upperdiv}`}>
         <div className={`col-md-6 ${styles.credentials}`}>
-          <button className={styles.credential} onClick={toggleOverlay}>
+          <button
+            className={styles.credential}
+            onClick={() => toggleOverlay("Profile")}
+          >
             Profile
           </button>
-          <button className={styles.credential} onClick={toggleOverlay}>
+          <button
+            className={styles.credential}
+            onClick={() => toggleOverlay("Skills")}
+          >
             Skills
           </button>
-          <button className={styles.credential} onClick={toggleOverlay}>
+          <button
+            className={styles.credential}
+            onClick={() => toggleOverlay("Projects")}
+          >
             Projects
           </button>
-          <button className={styles.credential} onClick={toggleOverlay}>
+          <button
+            className={styles.credential}
+            onClick={() => toggleOverlay("Contact me")}
+          >
             Contact me
           </button>
         </div>
@@ -38,7 +56,9 @@ export default function Home() {
         </div>
       </div>
       <Space />
-      {overlayVisible && <Overlay header="Profile" onClose={closeOverlay} />}
+      {overlayVisible && (
+        <Overlay header={overlayHeader} onClose={closeOverlay} />
+      )}
       <div className={styles.lowerSpace}>
         <div className={styles.rocketDiv}>
           <img src="rocket.png" alt="" className={styles.rocket} />

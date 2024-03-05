@@ -54,6 +54,7 @@
   display: flex;
   justify-content: end;
 }
+
 .moon img {
   margin-top: 2rem;
   height: 19rem;
@@ -110,7 +111,7 @@
     transform: translateX(-42rem) translateY(1rem) rotate(180deg);
   }
   90% {
-    transform: translateX(11rem) translateY(-29rem) rotate(-90deg);
+    transform: translateX(10.5rem) translateY(-29rem) rotate(-90deg);
   }
   100% {
     transform: translateX(11.5rem) translateY(-29rem) rotate(-75deg);
