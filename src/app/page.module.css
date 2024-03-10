@@ -114,7 +114,7 @@
     transform: translateX(10.5rem) translateY(-29rem) rotate(-90deg);
   }
   100% {
-    transform: translateX(11.5rem) translateY(-29rem) rotate(-75deg);
+    transform: translateX(11.9rem) translateY(-29rem) rotate(-73deg);
   }
 }
 @media (max-width: 375px) {

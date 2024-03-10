@@ -3,14 +3,18 @@ import React, { useState } from "react";
 import styles from "./page.module.css";
 import Space from "./components/Space";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Overlay from "./components/Profile";
+import Profile from "./components/Profile";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import ContactMe from "./components/ContactMe";
 
 export default function Home() {
   const [overlayVisible, setOverlayVisible] = useState(false);
-  const [overlayHeader, setOverlayHeader] = useState("");
+  const [overlayComponent, setOverlayComponent] =
+    useState<React.ReactNode | null>(null);
 
-  const toggleOverlay = (header: string) => {
-    setOverlayHeader(header);
+  const toggleOverlay = (component: React.ReactNode) => {
+    setOverlayComponent(component);
     setOverlayVisible(!overlayVisible);
   };
 
@@ -28,25 +32,25 @@ export default function Home() {
         <div className={`col-md-6 ${styles.credentials}`}>
           <button
             className={styles.credential}
-            onClick={() => toggleOverlay("Profile")}
+            onClick={() => toggleOverlay(<Profile onClose={closeOverlay} />)}
           >
             Profile
           </button>
           <button
             className={styles.credential}
-            onClick={() => toggleOverlay("Skills")}
+            onClick={() => toggleOverlay(<Skills onClose={closeOverlay} />)}
           >
             Skills
           </button>
           <button
             className={styles.credential}
-            onClick={() => toggleOverlay("Projects")}
+            onClick={() => toggleOverlay(<Projects onClose={closeOverlay} />)}
           >
             Projects
           </button>
           <button
             className={styles.credential}
-            onClick={() => toggleOverlay("Contact me")}
+            onClick={() => toggleOverlay(<ContactMe onClose={closeOverlay} />)}
           >
             Contact me
           </button>
@@ -56,9 +60,7 @@ export default function Home() {
         </div>
       </div>
       <Space />
-      {overlayVisible && (
-        <Overlay header={overlayHeader} onClose={closeOverlay} />
-      )}
+      {overlayVisible && overlayComponent && <div>{overlayComponent}</div>}
       <div className={styles.lowerSpace}>
         <div className={styles.rocketDiv}>
           <img src="rocket.png" alt="" className={styles.rocket} />
