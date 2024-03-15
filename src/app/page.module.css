@@ -52,7 +52,7 @@
 }
 .moon {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .moon img {

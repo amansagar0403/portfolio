@@ -15,7 +15,7 @@ function Profile({ onClose }: ProfileProps) {
     setClosing(true);
     setTimeout(() => {
       onClose();
-    }, 4000);
+    }, 2000);
   };
 
   return (
