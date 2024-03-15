@@ -5,7 +5,6 @@
   overflow: hidden;
   background-color: black;
 }
-
 .star {
   position: absolute;
   width: 3px;
@@ -14,31 +13,20 @@
   border-radius: 50%;
   opacity: 0.8;
 }
-.ContactMe {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  background-color: rgb(0, 0, 0);
-  padding: 20px;
-  height: 75vh;
-  text-align: center;
-  z-index: 2;
-  animation: popup 2s ease-in-out;
-  border: 2px solid white;
-}
 .Profile {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 95%;
-  background-color: rgb(0, 0, 0, 0.8);
-  height: 90vh;
+  width: 100%;
+  background-color: rgb(0, 0, 0, 0.6);
+  padding: 20px;
+  height: 100vh;
   text-align: center;
   z-index: 2;
-  animation: popup 2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .navbar {
   height: 5rem;
@@ -61,14 +49,136 @@
   width: 3rem;
 }
 .title {
-  font-size: 3rem;
   color: white;
+  width: 100%;
+  font-family: "Times New Roman", Times, serif;
+  background-color: transparent;
+}
+.content {
+  height: 80vh;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+}
+.btn {
+  background-color: black;
+  color: white;
+  height: 2rem;
+  width: 3rem;
+  font-size: 1rem;
+  border: 2px solid white;
+  border-radius: 100px;
+  margin-right: 5px;
+}
+.backbtn {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+.details {
+  height: 60vh;
+  width: 80%;
+  margin-top: 2.4rem;
+  text-align: left;
+}
+.heading {
+  color: white;
+  font-size: 2rem;
+  background-color: transparent;
+  font-family: "Times New Roman", Times, serif;
+  margin-bottom: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+}
+.rocket {
+  height: 7rem;
+  width: 5%;
+  display: flex;
+  align-items: center;
+  animation: moveright 20s ease-in-out infinite;
+  background-color: transparent;
+}
+.rocket img {
+  height: 8rem;
+  rotate: 90deg;
+  background-color: transparent;
+}
+.detail {
   width: 100%;
-  font-family: "Times New Roman", Times, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+.container {
+  display: flex;
+}
+.pallet {
+  background-color: rgb(0, 0, 0);
+  width: 70%;
+  animation: slidein 3s ease-in-out forwards;
+  height: 63vh;
+  border: 5px solid white;
+  padding: 5px;
+}
+.pic {
+  background-color: rgb(0, 0, 0);
+  width: 40%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image {
+  height: 20rem;
+}
+.credentials {
+  background-color: transparent;
+  width: 50%;
+  text-align: left;
+}
+.slideout {
+  animation: slideout 3s ease-in-out forwards;
+}
+.input {
+  background-color: transparent;
+  width: 100%;
+  color: white;
+  margin-bottom: 20px;
+}
+@keyframes slideout {
+  from {
+    transform: translateX(0rem);
+  }
+  to {
+    transform: translateX(-82rem);
+  }
+}
+@keyframes slidein {
+  from {
+    transform: translateX(-90rem);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes moveright {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(86rem);
+  }
+  50% {
+    transform: translateX(86rem) translateY(35rem) rotate(90deg);
+  }
+  75% {
+    transform: translateX(0) translateY(35rem) rotate(180deg);
+  }
+  100% {
+    transform: translateX(0) translateY(0rem);
+  }
 }
 @keyframes popup {
   0%,
@@ -84,13 +194,154 @@
     opacity: 1;
   }
 }
-@media (max-width: 768px) {
-  .title {
-    font-size: 2rem;
+@media (max-width: 300px) {
+  .pallet {
+    height: 100vh !important;
+  }
+  .input {
+    font-size: 16px !important;
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: 380px) {
+  .hide {
+    display: none;
+  }
+  .image {
+    height: 30vh !important;
+  }
+  .pallet {
+    height: 94vh !important;
+  }
+  .credentials {
+    font-size: 10px;
+    width: 100%;
+  }
+}
+@media (min-width: 380px) and (max-width: 415px) {
+  .hide {
+    display: none;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .hide {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .heading {
+    margin-bottom: 5px;
+  }
+  .pic {
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    order: 1;
+    margin-bottom: 20px;
+  }
+  .image {
+    height: 35vh;
+  }
+  .pallet {
+    width: 100%;
+    height: 85vh;
+    flex-direction: column;
+  }
+  .credentials {
+    order: 2;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+  .container {
+    flex-direction: column;
+  }
+  .backbtn {
+    justify-content: center;
+  }
+  @keyframes moveright {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(50rem);
+    }
+  }
+  @keyframes slideout {
+    from {
+      transform: translateX(0rem);
+    }
+    to {
+      transform: translateX(-50rem);
+    }
+  }
+  @keyframes slidein {
+    from {
+      transform: translateX(-50rem);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  .contents {
+    width: 80%;
+    justify-content: center;
+  }
+}
+@media (min-width: 819px) and (max-width: 1024px) {
+  .pic {
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    order: 1;
+    margin-bottom: 20px;
+  }
+  .image {
+    height: 35vh;
+  }
+  .pallet {
+    width: 100%;
+    height: 85vh;
+    flex-direction: column;
+  }
+  .credentials {
+    order: 2;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+  .container {
+    flex-direction: column;
+  }
+  .backbtn {
+    justify-content: center;
+  }
+  .input {
+    width: 100%;
+    font-size: 25px;
+  }
   .title {
-    font-size: 4rem;
+    font-size: 40px;
+  }
+  .contents {
+    width: 60%;
+    margin-bottom: 10px;
+  }
+}
+@media (min-width: 1280px) and (min-height: 800px) {
+  .pallet {
+    height: 57vh;
+  }
+}
+@media (min-width: 1440px) and (min-height: 900px) {
+  .pallet {
+    height: 50vh;
   }
 }
