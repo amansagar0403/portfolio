@@ -165,16 +165,31 @@
 }
 .achieved {
   width: 90%;
-  height: 50%;
+  height: 60%;
 }
 .pictures {
   width: 100%;
-  background-color: red;
   height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.skill {
+  margin: 2px 60px;
+  background-color: transparent;
+  height: 3.5rem;
+  animation: glow 5s ease-in-out infinite;
 }
 .pending {
   width: 90%;
-  height: 45%;
+  height: 35%;
+}
+@keyframes glow {
+  from {
+  }
+  to {
+    filter: drop-shadow(0px 0 4px white); /* Adjust shadow size and color */
+  }
 }
 @keyframes slideout {
   from {
@@ -233,6 +248,13 @@
   .skillsPallet {
     width: 90% !important;
   }
+  .achieved {
+    height: 70%;
+  }
+  .skill {
+    height: 0.2rem !important;
+    margin: 0px 0px !important;
+  }
 }
 @media (max-width: 380px) {
   .hide {
@@ -251,10 +273,20 @@
   .skillsPallet {
     width: 90% !important;
   }
+  .skill {
+    height: 2rem !important;
+    margin: 0px 5px !important;
+  }
 }
 @media (min-width: 380px) and (max-width: 415px) {
   .hide {
     display: none;
+  }
+  .skill {
+    height: 2.5rem !important;
+  }
+  .pictures {
+    height: 70% !important;
   }
 }
 @media only screen and (max-width: 540px) {
@@ -263,6 +295,10 @@
   }
   .skillsPallet {
     width: 90% !important;
+  }
+  .skill {
+    height: 2.5rem !important;
+    margin: 5px 10px !important;
   }
 }
 @media (max-width: 768px) {
@@ -327,6 +363,10 @@
   .contents {
     width: 80%;
     justify-content: center;
+  }
+  .skill {
+    height: 3rem !important;
+    margin: 10px 10px !important;
   }
 }
 @media (min-width: 819px) and (max-width: 1024px) {

@@ -28,7 +28,17 @@ function Skills({ onClose }: SkillsProps) {
           <div className={styles.mainDiv}>
             <div className={styles.achieved}>
               <h4 className={styles.head}>Achieved</h4>
-              <div className={styles.pictures}></div>
+              <div className={styles.pictures}>
+                <img src="python.png" className={styles.skill} alt="" />
+                <img src="java.png" className={styles.skill} alt="" />
+                <img src="html.png" className={styles.skill} alt="" />
+                <img src="css.png" className={styles.skill} alt="" />
+                <img src="js.png" className={styles.skill} alt="" />
+                <img src="tensorflow.png" className={styles.skill} alt="" />
+                <img src="figma.png" className={styles.skill} alt="" />
+                <img src="illustrator.png" className={styles.skill} alt="" />
+                <img src="react.png" className={styles.skill} alt="" />
+              </div>
             </div>
             <div className={styles.pending}>
               <h4 className={styles.head}>Working</h4>
