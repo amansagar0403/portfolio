@@ -41,7 +41,12 @@ function Skills({ onClose }: SkillsProps) {
               </div>
             </div>
             <div className={styles.pending}>
-              <h4 className={styles.head}>Working</h4>
+              <h4 className={styles.head}>Working..</h4>
+              <div className={styles.pictures}>
+                <img src="node.png" className={styles.greyscale} alt="" />
+                <img src="api.png" className={styles.greyscale} alt="" />
+                <img src="firebase.png" className={styles.greyscale} alt="" />
+              </div>
             </div>
           </div>
           <div className={styles.backbtn}>

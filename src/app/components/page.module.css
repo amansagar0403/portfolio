@@ -125,7 +125,7 @@
   padding: 5px;
 }
 .skillsPallet {
-  height: 80vh;
+  height: 70vh;
 }
 .pic {
   background-color: rgb(0, 0, 0);
@@ -184,6 +184,12 @@
   width: 90%;
   height: 35%;
 }
+.greyscale {
+  margin: 2px 60px;
+  background-color: transparent;
+  height: 3.5rem;
+  filter: grayscale(100%);
+}
 @keyframes glow {
   from {
   }
@@ -238,7 +244,7 @@
     opacity: 1;
   }
 }
-@media (max-width: 300px) {
+@media only screen and (max-width: 300px) {
   .pallet {
     height: 100vh !important;
   }
@@ -246,17 +252,21 @@
     font-size: 16px !important;
   }
   .skillsPallet {
-    width: 90% !important;
+    width: 100% !important;
   }
   .achieved {
-    height: 70%;
+    height: 80% !important;
+    margin-bottom: 20px;
   }
-  .skill {
-    height: 0.2rem !important;
-    margin: 0px 0px !important;
+  .skills,
+  .greyscale {
+    height: 1.5rem !important;
+  }
+  .pictures {
+    justify-content: space-around;
   }
 }
-@media (max-width: 380px) {
+@media (min-width: 301px) and (max-width: 380px) {
   .hide {
     display: none;
   }
@@ -270,12 +280,16 @@
     font-size: 10px;
     width: 100%;
   }
+  .achieved {
+    height: 75%;
+    margin-bottom: 20px;
+  }
   .skillsPallet {
     width: 90% !important;
   }
-  .skill {
-    height: 2rem !important;
-    margin: 0px 5px !important;
+  .skill,
+  .greyscale {
+    height: 2.5rem !important;
   }
 }
 @media (min-width: 380px) and (max-width: 415px) {
@@ -283,10 +297,13 @@
     display: none;
   }
   .skill {
-    height: 2.5rem !important;
+    height: 3rem !important;
   }
   .pictures {
     height: 70% !important;
+  }
+  .pending {
+    margin-bottom: 20px;
   }
 }
 @media only screen and (max-width: 540px) {
@@ -296,8 +313,9 @@
   .skillsPallet {
     width: 90% !important;
   }
-  .skill {
-    height: 2.5rem !important;
+  .skill,
+  .greyscale {
+    /* height: 2.5rem !important; */
     margin: 5px 10px !important;
   }
 }
@@ -364,9 +382,18 @@
     width: 80%;
     justify-content: center;
   }
+  .achieved {
+    height: 70%;
+  }
+  .pictures {
+    justify-content: center;
+  }
+  .pending {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
   .skill {
-    height: 3rem !important;
-    margin: 10px 10px !important;
+    height: 3rem;
   }
 }
 @media (min-width: 819px) and (max-width: 1024px) {
@@ -412,14 +439,29 @@
     width: 60%;
     margin-bottom: 10px;
   }
+  .pictures {
+    justify-content: center;
+  }
+  .pending {
+    margin-bottom: 20px;
+  }
+  .skill {
+    height: 2.5rem;
+  }
 }
 @media (min-width: 1280px) and (min-height: 800px) {
   .pallet {
     height: 57vh;
   }
+  .achieved {
+    margin-bottom: 20px;
+  }
 }
 @media (min-width: 1440px) and (min-height: 900px) {
   .pallet {
     height: 50vh;
+  }
+  .skillsPallet {
+    height: 55vh;
   }
 }
