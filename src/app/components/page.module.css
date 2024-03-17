@@ -309,15 +309,13 @@
     height: 75%;
     margin-bottom: 20px;
   }
-  .skillsPallet {
+  .skillsPallet,
+  .Projects {
     width: 90% !important;
   }
   .skill,
   .greyscale {
     height: 2.5rem !important;
-  }
-  .Projects {
-    width: 100% !important;
   }
   .projectImg {
     width: 50%;
@@ -351,7 +349,8 @@
   .hide {
     display: none;
   }
-  .skillsPallet {
+  .skillsPallet,
+  .Projects {
     width: 90% !important;
   }
   .skill,
@@ -510,7 +509,8 @@
   .pallet {
     height: 50vh;
   }
-  .skillsPallet {
+  .skillsPallet,
+  .Projects {
     height: 55vh;
   }
 }
