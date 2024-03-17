@@ -14,7 +14,8 @@
   opacity: 0.8;
 }
 .Profile,
-.Skills {
+.Skills,
+.Projects {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -28,6 +29,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.Projects {
+  width: 80%;
 }
 .navbar {
   height: 5rem;
@@ -190,6 +194,23 @@
   height: 3.5rem;
   filter: grayscale(100%);
 }
+.projectList {
+  height: 75%;
+  width: 100%;
+}
+.project {
+  height: 25%;
+  margin: 10px 0px;
+  display: flex;
+}
+.projectImg {
+  background-color: pink;
+  width: 10%;
+}
+.projectDetails {
+  background-color: red;
+  width: 90%;
+}
 @keyframes glow {
   from {
   }
@@ -265,6 +286,10 @@
   .pictures {
     justify-content: space-around;
   }
+  .Projects {
+    width: 100%;
+    height: 50%;
+  }
 }
 @media (min-width: 301px) and (max-width: 380px) {
   .hide {
@@ -291,6 +316,12 @@
   .greyscale {
     height: 2.5rem !important;
   }
+  .Projects {
+    width: 100% !important;
+  }
+  .projectImg {
+    width: 50%;
+  }
 }
 @media (min-width: 380px) and (max-width: 415px) {
   .hide {
@@ -304,6 +335,16 @@
   }
   .pending {
     margin-bottom: 20px;
+  }
+  .Projects {
+    width: 90%;
+  }
+  .project {
+    height: 20%;
+  }
+  .projectImg {
+    background-color: pink;
+    width: 70%;
   }
 }
 @media only screen and (max-width: 540px) {
@@ -395,6 +436,10 @@
   .skill {
     height: 3rem;
   }
+  .projectImg {
+    background-color: pink;
+    width: 40%;
+  }
 }
 @media (min-width: 819px) and (max-width: 1024px) {
   .pic {
@@ -447,6 +492,10 @@
   }
   .skill {
     height: 2.5rem;
+  }
+  .projectImg {
+    background-color: pink;
+    width: 40% !important;
   }
 }
 @media (min-width: 1280px) and (min-height: 800px) {
