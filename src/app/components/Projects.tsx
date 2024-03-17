@@ -21,7 +21,9 @@ function Projects({ onClose }: ProjectsProps) {
   return (
     <div className={`${styles.Projects}`}>
       <div className={styles.detail}>
-        <div className={`${styles.pallet} ${closing ? styles.slideout : ""}`}>
+        <div
+          className={`${styles.skillsPallet} ${closing ? styles.slideout : ""}`}
+        >
           <div className={styles.heading}>Projects</div>
           <div className={styles.projectList}>
             <div className={styles.project}>

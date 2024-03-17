@@ -30,9 +30,6 @@
   justify-content: center;
   align-items: center;
 }
-.Projects {
-  width: 80%;
-}
 .navbar {
   height: 5rem;
   width: 100%;
@@ -286,10 +283,6 @@
   .pictures {
     justify-content: space-around;
   }
-  .Projects {
-    width: 100%;
-    height: 50%;
-  }
 }
 @media (min-width: 301px) and (max-width: 380px) {
   .hide {
@@ -309,8 +302,7 @@
     height: 75%;
     margin-bottom: 20px;
   }
-  .skillsPallet,
-  .Projects {
+  .skillsPallet {
     width: 90% !important;
   }
   .skill,
@@ -334,9 +326,6 @@
   .pending {
     margin-bottom: 20px;
   }
-  .Projects {
-    width: 90%;
-  }
   .project {
     height: 20%;
   }
@@ -349,8 +338,7 @@
   .hide {
     display: none;
   }
-  .skillsPallet,
-  .Projects {
+  .skillsPallet {
     width: 90% !important;
   }
   .skill,
@@ -509,8 +497,7 @@
   .pallet {
     height: 50vh;
   }
-  .skillsPallet,
-  .Projects {
+  .skillsPallet {
     height: 55vh;
   }
 }
