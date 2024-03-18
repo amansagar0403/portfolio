@@ -343,7 +343,7 @@
   }
   .skill,
   .greyscale {
-    /* height: 2.5rem !important; */
+    height: 2.5rem !important;
     margin: 5px 10px !important;
   }
 }
