@@ -533,6 +533,9 @@
   .tech {
     font-size: 17px;
   }
+  .projectImage {
+    height: 7rem;
+  }
 }
 @media (min-width: 1280px) and (min-height: 800px) {
   .pallet {
