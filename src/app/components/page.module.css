@@ -199,14 +199,38 @@
   height: 25%;
   margin: 10px 0px;
   display: flex;
+  border: 2px solid white;
 }
 .projectImg {
-  background-color: pink;
   width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid white;
 }
 .projectDetails {
-  background-color: red;
   width: 90%;
+  text-align: left;
+  padding-left: 10px;
+}
+.projectImage {
+  background-color: transparent;
+  height: 5rem;
+}
+.projectName {
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  margin-bottom: 0px;
+  font-weight: bold;
+}
+.project:hover {
+  box-shadow: 1px 1px 15px white;
+  cursor: pointer;
+}
+.tech {
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
 }
 @keyframes glow {
   from {
@@ -312,6 +336,13 @@
   .projectImg {
     width: 50%;
   }
+  .projectName {
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .tech {
+    font-size: 11px;
+  }
 }
 @media (min-width: 380px) and (max-width: 415px) {
   .hide {
@@ -330,8 +361,14 @@
     height: 20%;
   }
   .projectImg {
-    background-color: pink;
     width: 70%;
+  }
+  .projectName {
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .tech {
+    font-size: 11px;
   }
 }
 @media only screen and (max-width: 540px) {
@@ -424,8 +461,14 @@
     height: 3rem;
   }
   .projectImg {
-    background-color: pink;
     width: 40%;
+  }
+  .projectName {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .tech {
+    font-size: 12px;
   }
 }
 @media (min-width: 819px) and (max-width: 1024px) {
@@ -481,8 +524,14 @@
     height: 2.5rem;
   }
   .projectImg {
-    background-color: pink;
     width: 40% !important;
+  }
+  .projectName {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .tech {
+    font-size: 17px;
   }
 }
 @media (min-width: 1280px) and (min-height: 800px) {

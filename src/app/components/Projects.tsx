@@ -27,16 +27,36 @@ function Projects({ onClose }: ProjectsProps) {
           <div className={styles.heading}>Projects</div>
           <div className={styles.projectList}>
             <div className={styles.project}>
-              <div className={styles.projectImg}></div>
-              <div className={styles.projectDetails}></div>
+              <div className={styles.projectImg}>
+                <img src="java.png" className={styles.projectImage} alt="" />
+              </div>
+              <div className={styles.projectDetails}>
+                <h5 className={styles.projectName}>Notepad</h5>
+                <p className={styles.tech}>Tech Stack - Java</p>
+              </div>
             </div>
             <div className={styles.project}>
-              <div className={styles.projectImg}></div>
-              <div className={styles.projectDetails}></div>
+              <div className={styles.projectImg}>
+                <img src="robot.png" className={styles.projectImage} alt="" />
+              </div>
+              <div className={styles.projectDetails}>
+                <h5 className={styles.projectName}>Movie Recommender System</h5>
+                <p className={styles.tech}>Tech Stack - Python,Ml algorithms</p>
+              </div>
             </div>
             <div className={styles.project}>
-              <div className={styles.projectImg}></div>
-              <div className={styles.projectDetails}></div>
+              <div className={styles.projectImg}>
+                <img
+                  src="frontend.png"
+                  className={styles.projectImage}
+                  alt=""
+                />
+              </div>
+              <div className={styles.projectDetails}>
+                <h5 className={styles.projectName}>Apple vision pro clone</h5>
+                <p className={styles.tech}>Tech Stack - Html,Css,Javascript</p>
+                <p className={styles.description}></p>
+              </div>
             </div>
           </div>
           <div className={styles.backbtn}>
