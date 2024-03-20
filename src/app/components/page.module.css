@@ -15,7 +15,8 @@
 }
 .Profile,
 .Skills,
-.Projects {
+.Projects,
+.ContactMe {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -212,6 +213,17 @@
   width: 90%;
   text-align: left;
   padding-left: 10px;
+  overflow-y: scroll;
+}
+.projectDetails::-webkit-scrollbar-track {
+  background: #000000;
+}
+.projectDetails::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 20px;
+}
+.projectDetails::-webkit-scrollbar {
+  width: 10px;
 }
 .projectImage {
   background-color: transparent;
@@ -220,7 +232,7 @@
 .projectName {
   color: white;
   font-family: "Times New Roman", Times, serif;
-  margin-bottom: 0px;
+  margin: 4px 0px;
   font-weight: bold;
 }
 .project:hover {
@@ -231,6 +243,20 @@
   color: white;
   font-family: "Times New Roman", Times, serif;
   font-style: italic;
+  margin-bottom: 5px;
+}
+.Contactimage {
+  background-color: transparent;
+  height: 20rem;
+  animation: rotate 100s infinite;
+}
+@keyframes rotate {
+  from {
+    transform: rotateZ(30rad);
+  }
+  to {
+    transform: rotateZ(35rad);
+  }
 }
 @keyframes glow {
   from {
@@ -307,6 +333,9 @@
   .pictures {
     justify-content: space-around;
   }
+  .screenHide {
+    display: none;
+  }
 }
 @media (min-width: 301px) and (max-width: 380px) {
   .hide {
@@ -343,6 +372,12 @@
   .tech {
     font-size: 11px;
   }
+  .screenHide {
+    display: none;
+  }
+  .Contactimage {
+    height: 15rem;
+  }
 }
 @media (min-width: 380px) and (max-width: 415px) {
   .hide {
@@ -370,6 +405,9 @@
   .tech {
     font-size: 11px;
   }
+  .screenHide {
+    display: none;
+  }
 }
 @media only screen and (max-width: 540px) {
   .hide {
@@ -382,6 +420,9 @@
   .greyscale {
     height: 2.5rem !important;
     margin: 5px 10px !important;
+  }
+  .screenHide {
+    display: none;
   }
 }
 @media (max-width: 768px) {
@@ -527,14 +568,17 @@
     width: 40% !important;
   }
   .projectName {
-    font-size: 25px;
+    font-size: 30px;
     font-weight: bold;
   }
   .tech {
-    font-size: 17px;
+    font-size: 20px;
   }
   .projectImage {
     height: 7rem;
+  }
+  .Contactimage {
+    height: 25rem;
   }
 }
 @media (min-width: 1280px) and (min-height: 800px) {

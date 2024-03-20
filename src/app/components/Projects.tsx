@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import styles from "./page.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 interface ProjectsProps {
   onClose: () => void;
@@ -35,29 +36,44 @@ function Projects({ onClose }: ProjectsProps) {
                 <p className={styles.tech}>Tech Stack - Java</p>
               </div>
             </div>
-            <div className={styles.project}>
-              <div className={styles.projectImg}>
-                <img src="robot.png" className={styles.projectImage} alt="" />
+            <Link
+              href="https://github.com/amansagar0403/movie-recommender-system"
+              style={{ textDecoration: "none" }}
+            >
+              <div className={styles.project}>
+                <div className={styles.projectImg}>
+                  <img src="robot.png" className={styles.projectImage} alt="" />
+                </div>
+                <div className={styles.projectDetails}>
+                  <h5 className={styles.projectName}>
+                    Movie Recommender System
+                  </h5>
+                  <p className={styles.tech}>
+                    Tech Stack - Python,Ml algorithms
+                  </p>
+                </div>
               </div>
-              <div className={styles.projectDetails}>
-                <h5 className={styles.projectName}>Movie Recommender System</h5>
-                <p className={styles.tech}>Tech Stack - Python,Ml algorithms</p>
+            </Link>
+            <Link
+              href="https://github.com/amansagar0403/Apple-Vision-Pro-Clone"
+              style={{ textDecoration: "none" }}
+            >
+              <div className={styles.project}>
+                <div className={styles.projectImg}>
+                  <img
+                    src="frontend.png"
+                    className={styles.projectImage}
+                    alt=""
+                  />
+                </div>
+                <div className={styles.projectDetails}>
+                  <h5 className={styles.projectName}>Apple vision pro clone</h5>
+                  <p className={styles.tech}>
+                    Tech Stack - Html,Css,Javascript
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className={styles.project}>
-              <div className={styles.projectImg}>
-                <img
-                  src="frontend.png"
-                  className={styles.projectImage}
-                  alt=""
-                />
-              </div>
-              <div className={styles.projectDetails}>
-                <h5 className={styles.projectName}>Apple vision pro clone</h5>
-                <p className={styles.tech}>Tech Stack - Html,Css,Javascript</p>
-                <p className={styles.description}></p>
-              </div>
-            </div>
+            </Link>
           </div>
           <div className={styles.backbtn}>
             <button onClick={handleClose} className={styles.btn}>
