@@ -13,6 +13,7 @@ function ContactMe({ onClose }: ContactMeProps) {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const [error, setError] = useState(null);
 
   const handleClose = () => {
     setClosing(true);
@@ -24,27 +25,25 @@ function ContactMe({ onClose }: ContactMeProps) {
   const handleSubmit = async () => {
     try {
       const response = await fetch("/send-email", {
-        // Assuming client and server are served from the same domain
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ email, subject, message }),
       });
-      if (response.ok) {
-        console.log("Email sent successfully");
-        // Clear input fields
-        setEmail("");
-        setSubject("");
-        setMessage("");
-        // Handle success, maybe show a message to the user
-      } else {
-        console.error("Error sending email");
-        // Handle error, maybe show an error message to the user
+
+      if (!response.ok) {
+        // Handle non-200 status codes (e.g., server error)
+        throw new Error(`Email sending failed with status: ${response.status}`);
       }
+
+      console.log("Email sent successfully");
+      setEmail(""); // Clear input fields on success (optional)
+      setSubject("");
+      setMessage("");
+      setError(null); // Clear any previous error state
     } catch (error) {
-      console.error("Error sending email", error);
-      // Handle error, maybe show an error message to the user
+      console.error(error); // Set error state for UI display
     }
   };
 

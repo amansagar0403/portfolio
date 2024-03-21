@@ -1,4 +1,3 @@
-// server.js
 const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
@@ -8,7 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(bodyParser.json());
-app.use(cors()); // Enable CORS for all routes
+app.use(cors({ origin: 'https://amansagar.vercel.app/' })); // Allow requests from localhost:3000 (replace with your React app's domain)
 
 const transporter = nodemailer.createTransport({
     service: 'Gmail',
@@ -18,27 +17,29 @@ const transporter = nodemailer.createTransport({
     },
 });
 
-app.post('/send-email', (req, res) => {
-    const { email, subject, message } = req.body;
+app.post('/send-email', async (req, res) => {
+    try {
+        const { email, subject, message } = req.body;
 
-    const mailOptions = {
-        from: 'codeatlas2023@gmail.com',
-        to: 'amansagar0403@gmail.com',
-        subject: subject || 'Contact Me',
-        text: `From: ${email}\n\n${message}`,
-    };
-
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            console.log(error);
-            res.status(500).send('Error sending email');
-        } else {
-            console.log('Email sent: ' + info.response);
-            res.status(200).send('Email sent successfully');
+        // Basic validation (replace with more comprehensive checks)
+        if (!email || !subject || !message) {
+            throw new Error('Please fill in all required fields.');
         }
-    });
-});
 
+        const mailOptions = {
+            from: 'codeatlas2023@gmail.com',
+            to: 'amansagar0403@gmail.com', // Replace with recipient's email
+            subject: subject || 'Contact Me',
+            text: `From: ${email}\n\n${message}`,
+        };
+
+        await transporter.sendMail(mailOptions);
+        res.status(200).send('Email sent successfully');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error sending email: ' + error.message);
+    }
+});
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
