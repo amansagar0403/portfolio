@@ -23,7 +23,8 @@ function ContactMe({ onClose }: ContactMeProps) {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch("https://amansagar.vercel.app/send-email", {
+      const response = await fetch("/send-email", {
+        // Assuming client and server are served from the same domain
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -80,8 +81,8 @@ function ContactMe({ onClose }: ContactMeProps) {
                 />
                 <button
                   className={styles.submitBtn}
-                  type="submit"
-                  onClick={handleSubmit}
+                  type="button" // Prevent form submission
+                  onClick={handleSubmit} // Bind handleSubmit function to onClick event
                 >
                   Submit
                 </button>
