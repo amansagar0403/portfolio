@@ -451,7 +451,7 @@
     display: none;
   }
   .Contactimage {
-    height: 17rem;
+    height: 17rem !important;
   }
   .submitBtn {
     margin-bottom: 2px;
