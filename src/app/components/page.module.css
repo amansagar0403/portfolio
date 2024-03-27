@@ -567,6 +567,9 @@
     margin-bottom: 5px;
     transform: translateY(-5px);
   }
+  .Contactimage {
+    height: 17rem;
+  }
 }
 @media (min-width: 819px) and (max-width: 1024px) {
   .pic {
