@@ -61,7 +61,7 @@ function ContactMe({ onClose }: ContactMeProps) {
                 <h4 className={styles.header}>Email id:</h4>
                 <input
                   type="text"
-                  className={styles.Emailinput}
+                  className={styles.Contactinput}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -80,8 +80,8 @@ function ContactMe({ onClose }: ContactMeProps) {
                 />
                 <button
                   className={styles.submitBtn}
-                  type="button" // Prevent form submission
-                  onClick={handleSubmit} // Bind handleSubmit function to onClick event
+                  type="button"
+                  onClick={handleSubmit} 
                 >
                   Submit
                 </button>

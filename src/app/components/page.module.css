@@ -408,7 +408,17 @@
     display: none;
   }
   .Contactimage {
-    height: 15rem;
+    height: 12rem;
+  }
+  .Contactinput {
+    height: 2rem;
+  }
+  .biginput {
+    height: 5rem;
+  }
+  .submitBtn {
+    height: 1.5rem;
+    margin-bottom: 8px;
   }
 }
 @media (min-width: 380px) and (max-width: 415px) {
@@ -440,6 +450,13 @@
   .screenHide {
     display: none;
   }
+  .Contactimage {
+    height: 17rem;
+  }
+  .submitBtn {
+    margin-bottom: 2px;
+    transform: translateY(-5px);
+  }
 }
 @media only screen and (max-width: 540px) {
   .hide {
@@ -455,6 +472,9 @@
   }
   .screenHide {
     display: none;
+  }
+  .Contactimage {
+    height: 10rem;
   }
 }
 @media (max-width: 768px) {
@@ -542,6 +562,10 @@
   }
   .tech {
     font-size: 12px;
+  }
+  .submitBtn {
+    margin-bottom: 5px;
+    transform: translateY(-5px);
   }
 }
 @media (min-width: 819px) and (max-width: 1024px) {
