@@ -408,7 +408,7 @@
     display: none;
   }
   .Contactimage {
-    height: 12rem;
+    height: 12rem !important;
   }
   .Contactinput {
     height: 2rem;
