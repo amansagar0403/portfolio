@@ -68,7 +68,7 @@ function ContactMe({ onClose }: ContactMeProps) {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
-                <h4 className={styles.header}>Email:</h4>
+                <h4 className={styles.header}>Your Email:</h4>
                 <input
                   type="text"
                   className={styles.Contactinput}
